@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.3-02112025] - 2025-11-02
+### Added
+- Auto-precheck integration: installer downloads and runs the LXC precheck before installing.
+- Interactive precheck fix prompt (auto `--fix` with CTID).
+- Full reinstall flow with DKMS/kernel module handling and manual fallback if `wg-quick` fails.
+- Dashboard & admin password prompt.
+- Logging directory: `/var/log/evxotech-wireguard/`
+
+### Fixed
+- Resolved `wg-quick` segmentation fault cases by ensuring kernel module availability and adding `ip` + `wg setconf` fallback.
+
+## [v1.1-02112025] - 2025-11-02
+### Added
+- Initial installer with dashboard and client generator.
+
+## [v1.0-02112025] - 2025-11-02
+### Initial
+- Basic installer & patch scripts.
+
+
 ## [v1.1-02112025] - 2025-11-02
 ### Added
 - Interactive admin password prompt (default `Admin@123`) for the dashboard.

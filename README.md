@@ -6,16 +6,15 @@
 
 ---
 
-## Contents
-- `evxotech-wireguard-installer-v1.1-02112025.sh` — interactive installer
-- `CHANGELOG.md`
-- `latest_version.txt` — (optional) put `v1.1-02112025` here; used by script version-check
-
----
+## Files
+- `evxotech-wireguard-installer-v1.3-02112025.sh` — main installer (auto precheck + full install)
+- `evxotech-wireguard-lxc-precheck-v1.1-02112025.sh` — precheck & fix script (host)
+- `CHANGELOG.md` — release notes
+- `latest_version.txt` — (optional) set to `v1.3-02112025` for version-checking
 
 ## Quick Start
-
-1. Upload the script to the Debian/Ubuntu LXC/VM and run as root:
+1. On the **Proxmox host**, run prechecks (recommended):
+2. Upload the script to the Debian/Ubuntu LXC/VM and run as root:
    ```bash
    chmod +x evxotech-wireguard-installer-v1.1-02112025.sh
    sudo ./evxotech-wireguard-installer-v1.1-02112025.sh

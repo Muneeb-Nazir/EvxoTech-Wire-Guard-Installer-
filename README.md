@@ -54,3 +54,34 @@ To uninstall (keeps backups):
 
 sudo /usr/local/bin/evxotech-wg-uninstall
    
+Notes & Caveats
+
+The installer uses eth0 in the PostUp/PostDown iptables commands. Edit /etc/wireguard/wg0.conf if your container uses a different interface (e.g., ens18).
+
+By default the dashboard runs on HTTP (port 10086). The script can optionally create a self-signed certificate and start an HTTPS service on 10443.
+
+The dashboard is a lightweight admin tool for adding clients and downloading configs. It uses HTTP Basic Auth (credentials are stored as environment variables in systemd service). For production, use stronger secret management and TLS from a trusted CA.
+
+If machines must authenticate to a Domain Controller before a user logs in (Windows "connect before logon"), WireGuard alone may not satisfy that. A Windows auto-connect service script can be used to make the tunnel available at boot — see scripts/ (planned).
+
+The script performs a simple version check by reading latest_version.txt from the repository. Upload that file to the repo root to enable version detection.
+
+Security Recommendations
+
+Replace default admin password immediately (the installer prompts for one).
+
+If exposing the dashboard publicly, secure with proper TLS (Let’s Encrypt) and restrict access via firewall.
+
+Store and manage client config files securely — they grant network access.
+
+Troubleshooting
+
+wg-quick up wg0 fails:
+
+Check /var/log/evxotech-wireguard-install.log
+
+Inspect /etc/wireguard/wg0.conf for interface name mismatches and correct PostUp/PostDown
+
+Firewall / NAT:
+
+If the LXC container has no native route to LAN, uncomment the MASQUERADE lines in /etc/wireguard/wg0.conf and adjust the external interface name.

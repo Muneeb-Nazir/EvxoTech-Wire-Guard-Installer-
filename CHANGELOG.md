@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
 - Client generator helper `/usr/local/bin/wg-add-client`.
 
 ### Changed
-- Default dashboard admin password changed from `Admin@!3@` to `Admin@123`.
+- Default dashboard admin password changed from `Admin@` to `Admin@123`.
 - Consolidated installer features into v1.1 (improved prompts, logging).
 
 ### Fixed

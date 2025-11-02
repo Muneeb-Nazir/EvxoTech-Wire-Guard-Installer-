@@ -34,7 +34,7 @@ DNS to push to clients (use your AD DNS when ready)
 
 Admin password for web dashboard (default Admin@123)
 
-4. After install:
+3. After install:
 
 Client configs: /etc/wireguard/clients/
 
@@ -46,7 +46,7 @@ username: admin
 
 password: the password you entered during install (or Admin@123)
 
-5. To create more clients later:
+4. To create more clients later:
 
 sudo /usr/local/bin/wg-add-client <client-name> [dns]
 

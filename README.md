@@ -21,22 +21,36 @@
    sudo ./evxotech-wireguard-installer-v1.1-02112025.sh
 
 2. Follow prompts:
+   
 Public IP / Domain (for client Endpoint)
+
 Server LAN IP (dashboard host)
+
 WireGuard listen port (default 5555)
+
 Number of client profiles to create
+
 DNS to push to clients (use your AD DNS when ready)
+
 Admin password for web dashboard (default Admin@123)
 
-3. After install:
+4. After install:
+
 Client configs: /etc/wireguard/clients/
+
 Client QR codes: /etc/wireguard/clients/qrcodes/
+
 Dashboard (HTTP): http://<server_lan_ip>:10086 (Basic Auth)
+
 username: admin
+
 password: the password you entered during install (or Admin@123)
 
-4. To create more clients later:
+5. To create more clients later:
+
 sudo /usr/local/bin/wg-add-client <client-name> [dns]
+
 To uninstall (keeps backups):
+
 sudo /usr/local/bin/evxotech-wg-uninstall
    
